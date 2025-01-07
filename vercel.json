@@ -2,7 +2,7 @@
   "redirects": [
     {
       "source": "/keyword",
-      "destination": "https://your-app-name.vercel.app",
+      "destination": "https://jan7keyword-8n03x4ylc-digitalthoughtzs-projects.vercel.app/"
       "permanent": true
     }
   ]
