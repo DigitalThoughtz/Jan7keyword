@@ -40,8 +40,8 @@ const App: React.FC = () => {
         ][i % 20]
       }`,
       searchVolume: Math.floor(Math.random() * 10000) + 1000,
-      competition: ["Low", "Medium", "High"][Math.floor(Math.random() * 3)] as
-  "Low" | "Medium" | "High",
+      const competitionLevels = ["Low", "Medium", "High"] as const;
+competition: competitionLevels[Math.floor(Math.random() * competitionLevels.length)],
     }));
   };
 
