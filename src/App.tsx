@@ -13,44 +13,35 @@ const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const generateMockKeywords = (query: string): Keyword[] => {
+    const competitionLevels: ("Low" | "Medium" | "High")[] = ["Low", "Medium", "High"];
+    const keywordSuffixes = [
+      "tool",
+      "guide",
+      "tips",
+      "tricks",
+      "hacks",
+      "ideas",
+      "examples",
+      "strategies",
+      "solutions",
+      "how to",
+      "tutorial",
+      "best practices",
+      "checklist",
+      "resources",
+      "approaches",
+      "insights",
+      "reviews",
+      "recommendations",
+      "FAQS",
+    ];
+
     return Array.from({ length: 20 }, (_, i) => ({
       id: i + 1,
-      keyword: `${query} ${
-        [
-          "tool",
-          "guide",
-          "tips",
-          "tricks",
-          "hacks",
-          "ideas",
-          "examples",
-          "strategies",
-          "solutions",
-          "how to",
-          "tutorial",
-          "best practices",
-          "checklist",
-          "resources",
-          "strategies",
-          "approaches",
-          "insights",
-          "reviews",
-          "recommendations",
-          "FAQS",
-        ][i % 20]
-      }`,
+      keyword: `${query} ${keywordSuffixes[i % keywordSuffixes.length]}`,
       searchVolume: Math.floor(Math.random() * 10000) + 1000,
-     const generateData = () => {
-  const competitionLevels: ("Low" | "Medium" | "High")[] = ["Low", "Medium", "High"];
-
-  return Array.from({ length: 10 }, (_, i) => ({
-    id: i + 1,
-    keyword: `Keyword ${i + 1}`,
-    searchVolume: Math.floor(Math.random() * 10000) + 1000,
-    competition: competitionLevels[Math.floor(Math.random() * 3)],
-  }));
-};
-],
+      competition: competitionLevels[Math.floor(Math.random() * competitionLevels.length)],
+    }));
   };
 
   const handleSearch = (e: React.FormEvent) => {
