@@ -41,9 +41,7 @@ const App: React.FC = () => {
       }`,
       searchVolume: Math.floor(Math.random() * 10000) + 1000,
       competition: ["Low", "Medium", "High"][Math.floor(Math.random() * 3)] as
-        | "Low"
-        | "Medium"
-        | "High",
+  "Low" | "Medium" | "High",
     }));
   };
 
