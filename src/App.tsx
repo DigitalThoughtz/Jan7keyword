@@ -40,8 +40,16 @@ const App: React.FC = () => {
         ][i % 20]
       }`,
       searchVolume: Math.floor(Math.random() * 10000) + 1000,
-      const competitionLevels: ("Low" | "Medium" | "High")[] = ["Low", "Medium", "High"];
-competition: competitionLevels[Math.floor(Math.random() * 3)],
+     const generateData = () => {
+  const competitionLevels: ("Low" | "Medium" | "High")[] = ["Low", "Medium", "High"];
+
+  return Array.from({ length: 10 }, (_, i) => ({
+    id: i + 1,
+    keyword: `Keyword ${i + 1}`,
+    searchVolume: Math.floor(Math.random() * 10000) + 1000,
+    competition: competitionLevels[Math.floor(Math.random() * 3)],
+  }));
+};
 ],
   };
 
