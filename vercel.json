@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/keyword",
+      "destination": "https://your-app-name.vercel.app",
+      "permanent": true
+    }
+  ]
+}
